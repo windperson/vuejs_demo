@@ -1,21 +1,19 @@
 <template>
-    <div> 
-         <p>{{ message }}</p>
-        <button v-on:click="reverseMessage">Reverse Message</button>
-    </div>
+    <transition>
+        <router-view v-on:test="test_event_handler"></router-view>
+    </transition>
 </template>
 <script>
     export default {
-        name: "app",
-        data: function () {
-            return {
-                message: 'Hello Vue.js!'
-            }
-        },
-        methods: {
-            reverseMessage: function () {
-                this.message = this.message.split('').reverse().join('')
-            }
+        // created: function () {
+        //     this.$on('test', function (msg) {
+        //         console.log(msg);
+        //     })
+        // }
+        methods:{
+         test_event_handler: function (msg){
+             console.log(msg);
+         }
         }
     }
 </script>

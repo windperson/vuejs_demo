@@ -1,0 +1,37 @@
+<template>
+    <transition name="fade">
+        <div>
+            <h3>Page 2</h3>
+            <p>This is page2, <br/> data = <span> {{ data }} </span><br/> counter = {{ my_counter }}
+            </p>
+            <button v-on:click="counter_up">+ 1</button>
+            <br/>
+            <button v-on:click="prev_page">prev page</button> | <button v-on:click="next_page">next page</button>
+        </div>
+    </transition>
+</template>
+
+<script>
+    export default {
+        name: "page2",
+        props: ['data'],
+        data: function () {
+            return {
+                my_counter: 0
+            };
+        },
+        methods: {
+            next_page: function () {
+                this.$emit("test","page-2 -> page-3");                
+                this.$router.push({name: "page-3"});
+            },
+            prev_page: function () {
+                this.$emit("test","page-2 -> page-1");                
+                this.$router.back();
+            },
+            counter_up: function () {
+                this.my_counter++;
+            }
+        }
+    }
+</script>
