@@ -14,7 +14,7 @@
 <script>
     export default {
         name: "page3",
-        props: ['data'],
+        props: ['data','eventbus'],
         data: function () {
             return {
                 my_counter: 0
@@ -22,7 +22,7 @@
         },
         methods: {
             prev_page: function () {
-                this.$emit("test","page-3 -> page-2");                
+                this.eventbus.$emit("test",{src: "page3", dst:"page2"});                
                 this.$router.back();
             },
             counter_up: function () {
