@@ -40,8 +40,20 @@ module.exports = {
 				exclude: /node_modules/
 			},
 			{
+				test: /\.scss$/,
+				loaders: ["style-loader", "css-loader", "sass-loader?sourceMap"]
+			},
+			{
 				test: /\.(png|jpg|gif|svg)$/,
-				loader: 'file-loader?name=image/[name].[ext]?[hash]'
+
+				// loader: 'file',
+				// query: {
+				// 	regExp: '\\b(assets)(.+)',
+				// 	name: 'image/[2]?[hash]',
+				// 	outputPath: 'public'
+				// },
+
+				loader: 'file-loader?context=src/assets&name=image/[path][name].[ext]?[hash]&outputPath=public'
 				// options: {
 				// 	name: 'assets/[name].[ext]?[hash]'
 				// }
