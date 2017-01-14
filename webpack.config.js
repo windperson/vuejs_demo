@@ -12,7 +12,8 @@ module.exports = {
 
 	output: {
 		filename: 'js/bundle.js',
-		path: outPath
+		path: outPath,
+		publicPath: "/"
 	},
 
 	// watch: true,
@@ -41,7 +42,7 @@ module.exports = {
 			},
 			{
 				test: /\.scss$/,
-				loaders: ["style-loader", "css-loader", "sass-loader?sourceMap"]
+				loaders: ["style-loader", "css-loader", "sass-loader"]
 			},
 			{
 				test: /\.(png|jpg|gif|svg)$/,
