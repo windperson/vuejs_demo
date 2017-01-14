@@ -65,7 +65,8 @@ module.exports = {
 		extensions: ['', '.js'],
 		root: [path.join(current, 'src/js')],
 		alias: {
-			'vue$': 'vue/dist/vue.common.js'
+			'vue$': 'vue/dist/vue.common.js',
+			'assets': path.resolve(__dirname, './src/assets')
 		}
 	}
 }

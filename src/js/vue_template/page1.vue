@@ -2,7 +2,7 @@
     <transition name="fade">
         <div>
             <h3>Page 1</h3>
-            <img src="../../assets/template_img/logo.png"/>
+            <img src="~assets/template_img/logo.png"/>
             <p>This is page1, <br/> data = <span> {{ data }} </span><br/> counter = {{ my_counter }}
             </p>
             <button v-on:click="counter_up">+ 1</button>
@@ -56,7 +56,7 @@
 </script>
 <style lang="sass" scoped>
 .collapser {
-    background-image : url('../../assets/bg/bg_menu.png');
+    background-image : url('~assets/bg/bg_menu.png');
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .2s
