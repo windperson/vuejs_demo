@@ -6,6 +6,9 @@
             </p>
             <button v-on:click="counter_up">+ 1</button>
             <br/>
+            <button v-on:click="change_img">change image</button>
+            <img :src="imgurl"/>
+            <hr/>
             <button v-on:click="prev_page">prev page</button> | <button v-on:click="next_page">next page</button>
         </div>
     </transition>
@@ -17,7 +20,8 @@
         props: ['data','eventbus'],
         data: function () {
             return {
-                my_counter: 0
+                my_counter: 0,
+                imgurl: ""
             };
         },
         methods: {
@@ -31,6 +35,9 @@
             },
             counter_up: function () {
                 this.my_counter++;
+            },
+            change_img: function () {
+                this.imgurl = "http://www.google.com.tw/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png";
             }
         }
     }
